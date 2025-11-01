@@ -1,16 +1,44 @@
- function loadContent(url) {
-        fetch(url)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok ' + response.statusText);
-                }
-                return response.text(); // Get the response as plain text (HTML)
-            })
-            .then(html => {
-                document.getElementById('content-container').innerHTML = html; // Insert the fetched HTML
-            })
-            .catch(error => {
-                console.error('There was a problem with the fetch operation:', error);
-                document.getElementById('content-container').innerHTML = '<p>Error loading content.</p>';
-            });
+document.addEventListener('DOMContentLoaded', () => {
+    const contentContainer = document.getElementById('content-container');
+    const navLinks = document.querySelectorAll('nav a');
+
+    // Function to load content dynamically
+    async function loadContent(event) {
+        event.preventDefault(); // Prevent default link behavior (full page reload)
+
+        const file = event.target.getAttribute('data-file');
+        const sectionId = event.target.getAttribute('data-section');
+
+        try {
+            const response = await fetch(file);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const htmlText = await response.text();
+
+            // Use DOMParser to convert the HTML string into a usable DOM object
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(htmlText, 'text/html');
+
+            // Find the specific section within the fetched document
+            const contentSection = doc.getElementById(sectionId);
+
+            if (contentSection) {
+                // Inject only the found section into the main container
+                contentContainer.innerHTML = ''; // Clear previous content
+                contentContainer.appendChild(contentSection);
+            } else {
+                contentContainer.innerHTML = `<p>Error: Section "${sectionId}" not found in ${file}</p>`;
+            }
+
+        } catch (error) {
+            console.error('Error loading content:', error);
+            contentContainer.innerHTML = '<p>Error loading requested content.</p>';
+        }
     }
+
+    // Add click event listeners to all navigation links
+    navLinks.forEach(link => {
+        link.addEventListener('click', loadContent);
+    });
+});
