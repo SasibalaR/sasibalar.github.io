@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>{{ page.title }} tab</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <style>
     :root {
       --bg: #000000;
@@ -79,12 +80,13 @@ a {
 </head>
 <body>
   <header>
-
-  <nav>
-    <a href="{{ '/index' | relative_url }}">Home</a>
-    <a href="{{ '/research' | relative_url }}">Research</a>
-    <a href="{{ '/outreach' | relative_url }}">Outreach</a>
-    <a href="{{ '/resources' | relative_url }}">Resources</a>
+  <nav class="navbar"> 
+    <ul class="nav__list">
+    <li class="nav-item"><a href="{{ '/index' | relative_url }}" class="nav-link active">Home</a></li> 
+    <li class="nav-item"><a href="{{ '/research' | relative_url }}" class="nav-link"></a>>Research</a></li>
+    <li class="nav-item"><a href="{{ '/outreach' | relative_url }}" class="nav-link"></a>>Outreach</a></li>
+    <li class="nav-item"><a href="{{ '/resources' | relative_url }}" class="nav-link"></a>>Resources</a></li>
+    </ul>
   </nav>
  </header>
  <section>
