@@ -78,15 +78,18 @@ a {
   </style>
 </head>
 <body>
+  <header>
+
   <nav>
     <a href="{{ '/index' | relative_url }}">Home</a>
     <a href="{{ '/research' | relative_url }}">Research</a>
     <a href="{{ '/outreach' | relative_url }}">Outreach</a>
     <a href="{{ '/resources' | relative_url }}">Resources</a>
   </nav>
-
+ </header>
+ <section>
   {{ content }}
-
+ </section>
   <footer>
     &copy; {{ "now" | date: "%Y" }} Meyvizhi
   </footer>
