@@ -36,24 +36,24 @@ a {
       line-height: 1.7;
     }
 
-    nav {
-      background: var(--nav-bg);
-      border-bottom: 2px solid var(--primary);
-      padding: 1rem 0;
-      margin-bottom: 2rem;
-      text-align: center;
-      align-self: stretch;
-      display: flex;
-      flex-direction: row;
-      -webkit-transition: .5s;
-      transition: .5s;
-      z-index: var(--z-fixed);
-      width: 100%;
-      height: 100vh;
-      position: fixed;
-      top: 0;
-      left: -100%;
-    }
+    
+/*===== NAV =====*/
+@media screen and (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    width: 100%;
+    height: 100vh;
+    padding: 1.5rem 0;
+    z-index: var(--z-fixed);
+    -webkit-transition: .5s;
+    transition: .5s;
+  }
+}
+
     
     nav__menu {
       -ms-flex-item-align: center;
