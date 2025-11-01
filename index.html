@@ -51,6 +51,35 @@
 
           <div class="home-content" id="content-container">
       </div>
-        
+      <div class="home-content" id="SelectedText">
+        <p>Replace me</p>
+    </div>
+     <script>
+        const loadPartial = async (elAnchor, elTarget) => {
+            const file = elAnchor.getAttribute("href");
+            try {
+                const res = await fetch(file);
+                const html = await res.text();
+                const domp = new DOMParser();
+                const doc = domp.parseFromString(html, "text/html");
+                elTarget.innerHTML = ""; // clear old content
+                elTarget.append(doc.documentElement);
+            } catch (err) {
+                console.error(err);
+                open(file, "_blank", "noopener,noreferrer");
+            };
+        };
+
+
+        const elTarget = document.querySelector("#SelectedText");
+        const elListen = document.querySelector(".listen");
+
+        elListen.addEventListener("click", (evt) => {
+            const elAnchor = evt.target.closest(".loc");
+            if (!elAnchor) return;
+            evt.preventDefault(); // Prevent browser following the anchor
+            loadPartial(elAnchor, elTarget);
+        });
+    </script>   
     </body>
 </html>
