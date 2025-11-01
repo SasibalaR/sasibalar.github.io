@@ -1,17 +1,123 @@
----
-layout: default
-title: Home
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ page.title }} tab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <style>
+    :root {
+      --bg: #000000;
+      --text: #efeee7;
+      --primary: #ffffff;  /* White nav text and headings */
+      --accent: #90caf9;   /* Light blue hover effect */
+      --nav-bg: #000000;
+      --footer-bg: #000000;
+      --card: #111111;
+      --border: #333333;
+    }
 
-  <p>Hello! I’m <strong>Meyvizhi</strong>- a 1st-year PhD candidate in the School of Mathematics and Statistics, at <a href="https://www.gla.ac.uk/schools/mathematicsstatistics/">UoG</a>. I am jointly supervised by <a href="https://sites.google.com/view/craiganderson/home">Dr. Craig Anderson</a>, <a href="https://www.gla.ac.uk/schools/mathematicsstatistics/staff/vanessamcnealis/">Dr. Vanessa McNealis</a> and <a href="https://www.gla.ac.uk/schools/mathematicsstatistics/staff/danielacastrocamilo/">Dr. Daniela Castro-Camilo</a>.</p>
+    /* Links in content */
+a {
+  color: #90caf9;   /* dark orange */
+  text-decoration: underline;
+}
 
-<p><img src="/photo.jpg" alt="Profile picture" width="200" /></p>
+    a:hover {
+  color: --text;   /* gold on hover */
+}
+    body {
+      font-family: 'ITC Benguiat Gothic', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      line-height: 1.7;
+    }
 
-<p>With a focus on disease risk mapping, I am working on spatial models to help answer important questions on health outcome inequalities. With <a href="https://sites.google.com/math.iith.ac.in/sayanteejana/team-members">previous experience</a> in infectious disease modelling, I now work on chronic diseases risks. Previous academic experience is a Bachelors in Statistics and Mathematics, which allowed me to explore both theory and applications.</p>
+    
+/*===== NAV =====*/
+@media screen and (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    width: 100%;
+    height: 100vh;
+    padding: 1.5rem 0;
+    z-index: var(--z-fixed);
+    -webkit-transition: .5s;
+    transition: .5s;
+  }
+}
 
-<p>Passionate about science outreach, I also help coordinate talks and workshops as a co-organizer of the <a href="https://www.meetup.com/rladies-bangalore/?msockid=249ea3195d2e6f811d22b60a5c546e13">R-Ladies Bangalore</a> chapter. Caricature-ising technical research into digestible cartoons is another way I attempt to engage with science outreach. More information on my background can be found in my <a href="\Meyvizhi_CV_Oct_25.pdf">CV</a>.</p>
+    
+    nav__menu {
+      -ms-flex-item-align: center;
+          -ms-grid-row-align: center;
+          align-self: center;
+    }
 
-<p>I am always open to hearing about cool science, books (<a href="https://www.goodreads.com/book/show/18774964-a-man-called-ove">A Man Called Ove</a> is a good read) and food reccomendations(<a href="https://centraltiffinroom.com/">Masala Dosas</a>)!</p>
+    nav__item {
+      margin: 2.5rem 0;
+    }
 
-<p><sup>3019046s@student.gla.ac.uk</sup></p>
+    nav a {
+      color: var(--primary);
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+    }
 
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    h1, h2, h3 {
+      color: var(--primary);
+    }
+
+    footer {
+      margin-top: 3rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+      font-size: 0.9rem;
+      color: #888;
+      text-align: center;
+      background-color: var(--footer-bg);
+    }
+
+    img.round-pic {
+      border-radius: 50%;
+      width: 80px;
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar" id="nav-menu">
+    <div class="nav__menu">
+    <ul class="nav__list">
+    <li class="nav-item"><a href="loadContent('home.html')" class="nav-link active">Home</a></li> 
+    <li class="nav-item"><a href="loadContent('research.html')" class="nav-link">Research</a></li>
+    <li class="nav-item"><a href="loadContent('outreach.html')" class="nav-link">Outreach</a></li>
+    <li class="nav-item"><a href="loadContent('resources.html')" class="nav-link">Resources</a></li>
+    </ul>
+    </div>
+    </nav>
+  </nav>
+ </header>
+ <section>
+  {{ content }}
+ </section>
+  <footer>
+    &copy; {{ "now" | date: "%Y" }} Meyvizhi
+  </footer>
+</body>
+</html>
