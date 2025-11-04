@@ -79,13 +79,16 @@ a {
       width: 80px;
     }
 
-
+    @media screen and (max-width: 600px) {
+      ul.topnav li.right, 
+      ul.topnav li {float: none;}
+    }
 
   </style>
 </head>
 <body>
   <nav>
-    <ul>
+    <ul class="topnav">
     <li><a href="{{ '/index' | relative_url }}">Home</a></li>
     <li><a href="{{ '/research' | relative_url }}">Research</a></li>
     <li><a href="{{ '/outreach' | relative_url }}">Outreach</a></li>
