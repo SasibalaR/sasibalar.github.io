@@ -48,7 +48,9 @@ a {
       display: flex;
       justify-content: center;
     }
-
+    ul a:active {
+          color: var(--accent);
+        }
     nav a {
       color: var(--primary);
       text-decoration: none;
@@ -56,8 +58,10 @@ a {
       font-weight: 600;
     }
 
-    ul a:hover,
-    ul a:active {
+    nav a:hover {
+      color: var(--accent);
+    }
+     nav a:active {
       color: var(--accent);
     }
 
