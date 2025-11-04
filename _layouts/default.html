@@ -43,6 +43,12 @@ a {
       text-align: center;
     }
 
+    ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+    }
+
     nav a {
       color: var(--primary);
       text-decoration: none;
@@ -79,10 +85,12 @@ a {
 </head>
 <body>
   <nav>
-    <a href="{{ '/index' | relative_url }}">Home</a>
-    <a href="{{ '/research' | relative_url }}">Research</a>
-    <a href="{{ '/outreach' | relative_url }}">Outreach</a>
-    <a href="{{ '/resources' | relative_url }}">Resources</a>
+    <ul>
+    <li><a href="{{ '/index' | relative_url }}">Home</a></li>
+    <li><a href="{{ '/research' | relative_url }}">Research</a></li>
+    <li><a href="{{ '/outreach' | relative_url }}">Outreach</a></li>
+    <li><a href="{{ '/resources' | relative_url }}">Resources</a></li>
+    </ul>
   </nav>
 
   {{ content }}
