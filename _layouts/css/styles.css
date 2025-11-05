@@ -38,18 +38,11 @@ a {
 }
 
 body {
-  margin: var(--header-height) 0 0 0;
-  font-family: var(--body-font);
-  font-size: var(--normal-font-size);
-  font-weight: 500;
-}
-
-body {
   font-family: 'ITC Benguiat Gothic', sans-serif;
   background-color: var(--bg);
   color: var(--text);
   max-width: 800px;
-  /* margin: 0 auto; */
+  margin: 0 auto;
   padding: 2rem 1.5rem;
   line-height: 1.7;
 }
@@ -159,6 +152,8 @@ img {
     z-index: var(--z-fixed);
     -webkit-transition: .5s;
     transition: .5s;
+    display: flex;
+    justify-content: center;
   }
 }
 
