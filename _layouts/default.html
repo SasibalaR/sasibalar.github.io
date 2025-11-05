@@ -97,11 +97,14 @@ a {
       ul.topnav li.right, 
       ul.topnav li {float: none;}
     }
+    :active {
+      color: var(--accent);
+    }
 
   </style>
 </head>
 <body>
-  <nav>
+  <nav class="navbar">
     <ul class="topnav">
     <li><a class="menu-item active" href="{{ '/index' | relative_url }}">Home</a></li>
     <li><a class="menu-item" href="{{ '/research' | relative_url }}">Research</a></li>

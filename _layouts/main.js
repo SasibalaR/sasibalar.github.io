@@ -1,19 +1,27 @@
-// Get all links with the class "nav-link"
-const navLinks = document.querySelectorAll('.menu-item');
+/*===== MENU SHOW Y HIDDEN =====*/ 
+const navMenu = document.getElementById('navbar'),
+      toggleMenu = document.getElementById('nav-toggle'),
+      closeMenu = document.getElementById('nav-close')
 
-// Add a click event listener to each link
-navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-        // Prevent default link behavior if you are staying on the same page
-        // e.preventDefault(); 
+/*SHOW*/ 
+toggleMenu.addEventListener('click', ()=>{
+    navMenu.classList.toggle('show')
+})
 
-        // Find the currently active link and remove the 'active' class
-        const currentActive = document.querySelector('.menu-item.active');
-        if (currentActive) {
-            currentActive.classList.remove('active');
-        }
+/*HIDDEN*/
+closeMenu.addEventListener('click', ()=>{
+    navMenu.classList.remove('show')
+})
 
-        // Add the 'active' class to the newly clicked link
-        this.classList.add('active');
-    });
-});
+/*===== ACTIVE AND REMOVE MENU =====*/
+const navLink = document.querySelectorAll('.menu-item');   
+
+function linkAction(){
+  /*Active link*/
+  navLink.forEach(n => n.classList.remove('active'));
+  this.classList.add('active');
+  
+  /*Remove menu mobile*/
+  navMenu.classList.remove('show')
+}
+navLink.forEach(n => n.addEventListener('click', linkAction));
