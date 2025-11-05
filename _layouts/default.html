@@ -41,6 +41,12 @@
       padding: 1rem 0;
       margin-bottom: 2rem;
       text-align: center;
+      display: flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
     }
 
     nav a {
@@ -76,6 +82,11 @@
     @media screen and (max-width: 600px) {
       nav a:right,
       nav {float: none;}
+      nav {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      }
     }
 
 
