@@ -1,5 +1,5 @@
 /*===== MENU SHOW Y HIDDEN =====*/ 
-const navMenu = document.getElementById('nav-menu'),
+const navMenu = document.getElementById('navbar'),
       toggleMenu = document.getElementById('nav-toggle'),
       closeMenu = document.getElementById('nav-close')
 
@@ -14,7 +14,7 @@ closeMenu.addEventListener('click', ()=>{
 })
 
 /*===== ACTIVE AND REMOVE MENU =====*/
-const navLink = document.querySelectorAll('.nav__link');   
+const navLink = document.querySelectorAll('.menu-item');   
 
 function linkAction(){
   /*Active link*/
