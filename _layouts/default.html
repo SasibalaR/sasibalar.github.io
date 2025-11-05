@@ -43,35 +43,15 @@ a {
       text-align: center;
     }
 
-    ul.topnav {
-      list-style-type: none;
-      display: flex;
-      justify-content: center;
-    }
-    
     nav a {
       color: var(--primary);
       text-decoration: none;
       margin: 0 15px;
       font-weight: 600;
     }
-     
-    ul.topnav li a.active {
-      color: var(--accent);
-    }
 
-    ul.topnav li a.hover{
+    nav a:hover {
       color: var(--accent);
-    }
-   
-    li.menu-item :active {
-      color: var(--accent);
-    }
-    li.menu-item :hover{
-      color: var(--accent);
-    }
-    li.menu-item  {
-      color: var(--primary);
     }
 
     h1, h2, h3 {
@@ -93,24 +73,16 @@ a {
       width: 80px;
     }
 
-    @media screen and (max-width: 600px) {
-      ul.topnav li.right, 
-      ul.topnav li {float: none;}
-    }
-    :active {
-      color: var(--accent);
-    }
+
 
   </style>
 </head>
 <body>
-  <nav class="navbar">
-    <ul class="topnav">
-    <li><a class="menu-item active" href="{{ '/index' | relative_url }}">Home</a></li>
-    <li><a class="menu-item" href="{{ '/research' | relative_url }}">Research</a></li>
-    <li><a class="menu-item" href="{{ '/outreach' | relative_url }}">Outreach</a></li>
-    <li><a class="menu-item" href="{{ '/resources' | relative_url }}">Resources</a></li>
-    </ul>
+  <nav>
+    <a href="{{ '/index' | relative_url }}">Home</a>
+    <a href="{{ '/research' | relative_url }}">Research</a>
+    <a href="{{ '/outreach' | relative_url }}">Outreach</a>
+    <a href="{{ '/resources' | relative_url }}">Resources</a>
   </nav>
 
   {{ content }}
@@ -118,7 +90,5 @@ a {
   <footer>
     &copy; {{ "now" | date: "%Y" }} Meyvizhi
   </footer>
-  <script src="main.js">
-  </script>
 </body>
 </html>
