@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <title>{{ page.title }} tab</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     :root {
       --bg: #000000;
@@ -41,7 +43,18 @@ a {
       padding: 1rem 0;
       margin-bottom: 2rem;
       text-align: center;
+       height: 100%;
+  -ms-grid-rows: max-content 1fr max-content;
+      grid-template-rows: -webkit-max-content 1fr -webkit-max-content;
+      grid-template-rows: max-content 1fr max-content;
+  row-gap: 2rem;
     }
+
+    .nav__menu {
+      -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
 
     nav a {
       color: var(--primary);
@@ -52,6 +65,26 @@ a {
 
     nav a:hover {
       color: var(--accent);
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+    .nav__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+    img.round-pic {
+      border-radius: 50%;
+      width: 80px;
     }
 
     h1, h2, h3 {
@@ -68,21 +101,128 @@ a {
       background-color: var(--footer-bg);
     }
 
-    img.round-pic {
-      border-radius: 50%;
-      width: 80px;
-    }
+.header__logo {
+  color: var(--white-color);
+}
+.nav__close {
+  position: absolute;
+  right: 1.5rem;
+  font-size: 1.3rem;
+  padding: .25rem;
+  background-color: var(--dark-color-alt);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.nav__name {
+  display: block;
+  color: var(--white-color);
+}
 
+.nav__item {
+  margin: 2.5rem 0;
+}
+.nav__social {
+  padding-top: .5rem;
+}
 
+.nav__social-icon {
+  font-size: 1.2rem;
+  color: var(--white-color);
+  margin-right: 1rem;
+}
+
+.nav__social-icon:hover {
+  color: var(--first-color);
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --normal-font-size: 1rem;
+    --small-font-size: .875rem;
+  }
+}
+/*===== NAV =====*/
+@media screen and (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    width: 100%;
+    height: 100vh;
+    padding: 1.5rem 0;
+    z-index: var(--z-fixed);
+    -webkit-transition: .5s;
+    transition: .5s;
+  }
+}
+/*===== MEDIA QUERIES =====*/
+@media screen and (min-width: 768px) {
+  body {
+    margin: 0;
+  }
+   .header__logo, .header__toggle {
+    display: none;
+  }
+  .nav__close, .nav__profesion {
+    display: none;
+  }
+  .nav__item {
+    margin: 0 .25rem;
+  }
+
+  .nav__link {
+    padding: .5rem .8rem;
+    border-radius: .25rem;
+  }
+  .nav__link:hover {
+    background-color: var(--first-color);
+  }
+  .active {
+    background-color: var(--first-color);
+    color: var(--white-color);
+  }
+   .nav {
+    width: 100%;
+    -ms-grid-columns: (max-content)[3];
+        grid-template-columns: repeat(3, -webkit-max-content);
+        grid-template-columns: repeat(3, max-content);
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    -webkit-column-gap: 1rem;
+            column-gap: 1rem;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
 
   </style>
 </head>
 <body>
-  <nav>
-    <a href="{{ '/index' | relative_url }}">Home</a>
-    <a href="{{ '/research' | relative_url }}">Research</a>
-    <a href="{{ '/outreach' | relative_url }}">Outreach</a>
-    <a href="{{ '/resources' | relative_url }}">Resources</a>
+  <nav class="nav" id="nav-menu">
+    <a href="#" class="header__logo">Meyvizhi</a>
+    <ion-icon name="close-outline" class="nav__close" id="nav-close"></ion-icon>
+    <div>
+        <a href="#" class="nav__name">Meyvizhi</a>
+    </div>
+    <div class="nav__menu">
+    <ul class="nav__list">
+       <li class="nav__item"><a href="{{ '/index' | relative_url }}" class="nav__link active">Home</a></li>
+       <li class="nav__item"><a href="{{ '/research' | relative_url }}" class="nav__link">Research</a></li>
+       <li class="nav__item"><a href="{{ '/research' | relative_url }}" class="nav__link">Outreach</a></li>
+       <li class="nav__item"><a href="{{ '/resources' | relative_url }}" class="nav__link">Resources</a></li>
+    </ul>
+    </div>
+    <div class="nav__social">
+      <a href="#" class="nav__social-icon"><ion-icon name="logo-linkedin"></ion-icon></a>
+      <a href="#" class="nav__social-icon"><ion-icon name="logo-github"></ion-icon></a>
+      <a href="#" class="nav__social-icon"><ion-icon name="logo-behance"></ion-icon></a>
+  </div>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
   </nav>
 
   {{ content }}
@@ -90,5 +230,20 @@ a {
   <footer>
     &copy; {{ "now" | date: "%Y" }} Meyvizhi
   </footer>
+  <script>
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+<!-- ===== IONICONS ===== -->
+<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+
+<!--===== MAIN JS =====-->
+<script src="main.js"></script>
 </body>
 </html>
