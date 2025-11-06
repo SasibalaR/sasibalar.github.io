@@ -1,83 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Responsive HTML5 CSS3 Navigation Menu - No Framework</title>
-    <link rel="icon" href="favicon.png" type="image/png" sizes="16x16" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
-    <link rel="stylesheet" href="src/style.css" />
-  </head>
-  <body>
-    <div class="navbar desktop-menu">
-      <div class="logo">
-        <a href="#"><img src="src/logo.png" alt="my-logo" /></a>
-      </div>
-      <div id="menuSection" class="menu-sec">
-        <ul class="nav-menu">
-          <li><a class="active" href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-      <div class="social-icons">
-        <i class="fab fa-facebook"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-github"></i>
-        <i class="fas fa-basketball-ball"></i>
-      </div>
-    </div>
-    <div
-      onclick="closeMobMenuToggle()"
-      id="mobMenuCont"
-      class="mob-menu-container"
-    >
-      <img src="src/close.png" alt="close-icon" />
-    </div>
-    <div id="mobMenuWrap" class="mob-menu-wrap">
-      <div class="menu-content">
-        <div class="menu-items">
-          <ul class="nav-menu">
-            <li><a class="active" href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </div>
-        <div class="social-items">
-          <div class="social-icons">
-            <i class="fab fa-facebook"></i>
-            <i class="fab fa-instagram"></i>
-            <i class="fab fa-github"></i>
-            <i class="fas fa-basketball-ball"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="mobile-menu">
-      <div class="logo">
-        <a href="#"><img src="src/logo.png" alt="my-logo" /></a>
-      </div>
-      <button onclick="mobMenuToggle()" class="menu">Menu</button>
-    </div>
-    <div class="body-content">
-      <p>Body Content Goes Here</p>
-    </div>
-    <div class="footer">
-      <p>
-        Copyright © 2021 | Developed by
-        <a href="https://arravind.com/" target="_blank">Arravind</a>
-      </p>
-    </div>
-    <script type="text/javascript" src="src/script.js"></script>
-  </body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="assets/css/styles.css">
+
+        <title>Menu responsive</title>
+    </head>
+    <body>
+        <header class="header">
+            <a href="#" class="header__logo">Jhon Doe</a>
+
+            <ion-icon name="menu-outline" class="header__toggle" id="nav-toggle"></ion-icon>
+
+            <nav class="nav" id="nav-menu">
+                <div class="nav__content bd-grid">
+
+                    <ion-icon name="close-outline" class="nav__close" id="nav-close"></ion-icon>
+    
+                    <div class="nav__perfil">
+                        <div class="nav__img">
+                            <img src="assets/img/perfil.png" alt="">
+                        </div>
+                        
+                        <div>
+                            <a href="#" class="nav__name">Jhon Doe</a>
+                            <span class="nav__profesion">Web designer</span>
+                        </div>
+                    </div>
+    
+                    <div class="nav__menu">
+                        <ul class="nav__list">
+                            <li class="nav__item"><a href="#" class="nav__link active">Home</a></li>
+                            <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+                            <li class="nav__item"><a href="#" class="nav__link">Skills</a></li>
+                            <li class="nav__item"><a href="#" class="nav__link">Portfolio</a></li>
+                            <li class="nav__item"><a href="#" class="nav__link">Contact</a></li>
+                        </ul>
+                    </div>
+    
+                    <div class="nav__social">
+                        <a href="#" class="nav__social-icon"><ion-icon name="logo-linkedin"></ion-icon></a>
+                        <a href="#" class="nav__social-icon"><ion-icon name="logo-github"></ion-icon></a>
+                        <a href="#" class="nav__social-icon"><ion-icon name="logo-behance"></ion-icon></a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- ===== IONICONS ===== -->
+        <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="assets/js/main.js"></script>
+    </body>
 </html>
