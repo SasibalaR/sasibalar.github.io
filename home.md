@@ -1,7 +1,3 @@
----
-layout: default
-title: Home
----
 
 
 Hello! I'm **Meyvizhi**- a 1st-year PhD candidate in the School of Mathematics and Statistics, at [UoG](https://www.gla.ac.uk/schools/mathematicsstatistics/). I am jointly supervised by [Dr. Craig Anderson](https://sites.google.com/view/craiganderson/home), [Dr. Vanessa McNealis](https://www.gla.ac.uk/schools/mathematicsstatistics/staff/vanessamcnealis/) and [Dr. Daniela Castro-Camilo](https://www.gla.ac.uk/schools/mathematicsstatistics/staff/danielacastrocamilo/).
