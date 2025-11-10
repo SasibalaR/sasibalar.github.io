@@ -28,7 +28,7 @@ navLink.forEach(n => n.addEventListener('click', linkAction));
 
 document.addEventListener('DOMContentLoaded', () => {
     const contentContainer = document.getElementById('content-container');
-    const navLinks = document.querySelectorAll('nav a');
+    const navLinks = document.querySelectorAll('nav__menu a');
     // Function to load content dynamically
     async function loadContent(event) {
         event.preventDefault(); // Prevent default link behavior (full page reload)
@@ -66,6 +66,3 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', loadContent);
     });
 });
-
-
-})
