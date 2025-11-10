@@ -65,6 +65,16 @@ img {
   margin-right: 1.5rem;
 }
 
+  .home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+  }
+  .home-content {
+    max-width: 600px;
+  }
+
 /*===== HEADER =====*/
 .header {
   width: 100%;
