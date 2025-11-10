@@ -64,13 +64,7 @@ img {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
-   .home-content {
-     height: 200vh;
-     display: flex;
-     align-items: center;
-     padding: 0 10%;
-      max-width: 900px;
-   }
+
 
 /*===== HEADER =====*/
 .header {
