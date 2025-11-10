@@ -61,5 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
             contentContainer.innerHTML = '<p>Error loading requested content.</p>';
         }
     }
+        // Add click event listeners to all navigation links
+    navLinks.forEach(link => {
+        link.addEventListener('click', loadContent);
+    });
+});
+
 
 })
