@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ page.title }} tab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <header class="header">
+<a href="#" class="header__logo">Meyvizhi</a>
+
+<ion-icon name="menu-outline" class="header__toggle" id="nav-toggle"></ion-icon>
+
+<nav class="nav" id="nav-menu">
+    <div class="nav__content bd-grid">
+
+        <ion-icon name="close-outline" class="nav__close" id="nav-close"></ion-icon>
+
+        <div class="nav__perfil">
+            <div class="nav__img">
+                <img src="profile.jpeg" alt="">
+            </div>
+            
+            <div>
+                <a href="#" class="nav__name">Meyvizhi</a>
+                <span class="nav__profesion">Student</span>
+            </div>
+        </div>
+
+        <div class="nav__menu">
+            <ul class="nav__list">
+       <li class="nav__item"><a href="{{ '/index' | relative_url }}" class="nav__link active">Home</a></li>
+       <li class="nav__item"><a href="{{ '/research' | relative_url }}" class="nav__link">Research</a></li>
+       <li class="nav__item"><a href="{{ '/research' | relative_url }}" class="nav__link">Outreach</a></li>
+       <li class="nav__item"><a href="{{ '/resources' | relative_url }}" class="nav__link">Resources</a></li>
+    </ul>
+    </div>
+
+<div class="nav__social">
+    <a href="#" class="nav__social-icon"><ion-icon name="logo-linkedin"></ion-icon></a>
+    <a href="#" class="nav__social-icon"><ion-icon name="logo-github"></ion-icon></a>
+    <a href="#" class="nav__social-icon"><ion-icon name="logo-behance"></ion-icon></a>
+</div>
+</div>
+</nav>
+</header>
+
+
+
+  {{ content }}
+
+  <footer>
+    &copy; {{ "now" | date: "%Y" }} Meyvizhi
+  </footer>
+
+<!-- ===== IONICONS ===== -->
+<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+
+<!--===== MAIN JS =====-->
+<script src="main.js"></script>
+</body>
+</html>
