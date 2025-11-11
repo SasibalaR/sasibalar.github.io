@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to load content dynamically
     async function loadContent(event) {
         event.preventDefault(); // Prevent default link behavior (full page reload)
-        const file = event.target.getAttribute('data-file');
-        const sectionId = event.target.getAttribute('data-section');
+        let file = event.target.getAttribute('data-file');
+        let sectionId = event.target.getAttribute('data-section');
         if(file == null){
             file = "home.html"
             sectionId = "home1-content"
