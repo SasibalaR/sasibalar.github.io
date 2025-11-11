@@ -39,6 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault(); // Prevent default link behavior (full page reload)
         const file = event.target.getAttribute('data-file');
         const sectionId = event.target.getAttribute('data-section');
+        if(file == null){
+            file = "home.html"
+            sectionId = "home1-content"
+        }
         try {
             const response = await fetch(file);
             if (!response.ok) {
