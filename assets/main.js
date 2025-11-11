@@ -26,6 +26,11 @@ function linkAction(){
 }
 navLink.forEach(n => n.addEventListener('click', linkAction));
 
+window.onload = function() {
+    // Simulate a click on menuItem1 when the page loads
+    document.getElementById('homemenu').click(); 
+};
+
 document.addEventListener('DOMContentLoaded', () => {
     const contentContainer = document.getElementById('content-container');
     const navLinks = document.querySelectorAll('nav a');
