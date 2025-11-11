@@ -33,16 +33,13 @@ window.onload = function() {
 
 document.addEventListener('DOMContentLoaded', () => {
     const contentContainer = document.getElementById('content-container');
-    const navLinks = document.querySelectorAll('nav a');
+    const navLinks = document.querySelectorAll('.nav__menu');
     // Function to load content dynamically
     async function loadContent(event) {
         event.preventDefault(); // Prevent default link behavior (full page reload)
         let file = event.target.getAttribute('data-file');
         let sectionId = event.target.getAttribute('data-section');
-        if(file == null && event.currentTarget.className == "nav__name"){
-            file = "home.html"
-            sectionId = "home1-content"
-        }
+        document.title = event.currentTarget.innerText
         try {
             const response = await fetch(file);
             if (!response.ok) {
