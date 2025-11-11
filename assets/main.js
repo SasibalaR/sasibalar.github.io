@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         event.preventDefault(); // Prevent default link behavior (full page reload)
         let file = event.target.getAttribute('data-file');
         let sectionId = event.target.getAttribute('data-section');
-        if(file == null){
+        if(file == null && event.currentTarget.className == "nav__name"){
             file = "home.html"
             sectionId = "home1-content"
         }
